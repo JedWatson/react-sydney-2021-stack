@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
-export default function Home() {
+import { lists } from '.keystone/api';
+
+export default function Home({ talks }) {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl mt-4 mb-4">
@@ -11,12 +13,19 @@ export default function Home() {
       </h1>
       <h2 className="text-2xl mt-4 mb-4">Talks:</h2>
       <ul className="text-lg list-disc list-inside">
-        <li>
-          <Link href="/talk/the-2021-stack">
-            <a className="text-blue-500 hover:underline">The 2021 Stack</a>
-          </Link>
-        </li>
+        {talks.map(talk => (
+          <li key={talk.id}>
+            <Link href={`/talk/${talk.slug}`}>
+              <a className="text-blue-500 hover:underline">{talk.title}</a>
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const talks = await lists.Talk.findMany({ query: 'id title slug' });
+  return { props: { talks } };
 }
