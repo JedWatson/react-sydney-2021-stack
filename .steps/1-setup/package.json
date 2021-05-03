@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "next": "^10.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "start": "next start",
+    "build": "next build"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "proseWrap": "preserve",
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.4",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.4"
+  }
+}
