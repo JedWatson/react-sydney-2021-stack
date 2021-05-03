@@ -1,3 +1,7 @@
+type Talk_description_DocumentField {
+  document(hydrateRelationships: Boolean! = false): JSON!
+}
+
 input SpeakerRelateToOneInput {
   create: SpeakerCreateInput
   connect: SpeakerWhereUniqueInput
@@ -12,7 +16,7 @@ type Talk {
   id: ID!
   title: String
   slug: String
-  description: String
+  description: Talk_description_DocumentField
   speaker: Speaker
 }
 
@@ -39,12 +43,6 @@ input TalkWhereInput {
   slug_not_contains: String
   slug_in: [String]
   slug_not_in: [String]
-  description: String
-  description_not: String
-  description_contains: String
-  description_not_contains: String
-  description_in: [String]
-  description_not_in: [String]
   speaker: SpeakerWhereInput
   speaker_is_null: Boolean
 }
@@ -60,8 +58,6 @@ enum SortTalksBy {
   title_DESC
   slug_ASC
   slug_DESC
-  description_ASC
-  description_DESC
   speaker_ASC
   speaker_DESC
 }
@@ -69,7 +65,7 @@ enum SortTalksBy {
 input TalkUpdateInput {
   title: String
   slug: String
-  description: String
+  description: JSON
   speaker: SpeakerRelateToOneInput
 }
 
@@ -81,7 +77,7 @@ input TalksUpdateInput {
 input TalkCreateInput {
   title: String
   slug: String
-  description: String
+  description: JSON
   speaker: SpeakerRelateToOneInput
 }
 

@@ -1,5 +1,6 @@
 import { list } from '@keystone-next/keystone/schema';
 import { relationship, text } from '@keystone-next/fields';
+import { document } from '@keystone-next/fields-document';
 
 function slug() {
   return text({
@@ -21,7 +22,21 @@ export const Talk = list({
   fields: {
     title: text({ isRequired: true }),
     slug: slug(),
-    description: text(),
+    description: document({
+      ui: {
+        createView: { fieldMode: 'hidden' },
+      },
+      formatting: true,
+      layouts: [
+        [1, 1],
+        [1, 1, 1],
+        [2, 1],
+        [1, 2],
+        [1, 2, 1],
+      ],
+      links: true,
+      dividers: true,
+    }),
     speaker: relationship({ ref: 'Speaker.talks' }),
   },
 });
