@@ -13,7 +13,9 @@ export default function Home({ talk }) {
         </Link>
       </div>
       <h1 className="text-3xl mt-4 mb-4">{talk.title}</h1>
-      {talk.speaker && <p>by {talk.speaker.name}</p>}
+      {talk.speaker && (
+        <p className="mt-4 mb-4 text-gray-500">by {talk.speaker.name}</p>
+      )}
       <div>
         <DocumentRenderer
           renderers={renderers}
