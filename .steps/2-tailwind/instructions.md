@@ -1,15 +1,8 @@
-install:
+add the main layout and pages, copied from:
 
 ```sh
-yarn add --dev tailwindcss@latest postcss@latest autoprefixer@latest
+pages/index.tsx
+pages/talk/[slug].tsx
 ```
 
-copy:
-
-```
-tailwind.config.js
-postcss.config.js
-pages/_app.tsx
-```
-
-update the styles in the home page, run it with `yarn dev`
+run it with `yarn dev`
