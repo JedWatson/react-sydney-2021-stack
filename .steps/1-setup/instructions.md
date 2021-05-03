@@ -11,3 +11,5 @@ copy:
 .gitignore
 package.json (scripts + prettier)
 ```
+
+add the first page, run it with `yarn dev`
