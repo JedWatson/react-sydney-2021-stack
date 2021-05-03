@@ -1,13 +1,6 @@
-import { config, list } from '@keystone-next/keystone/schema';
-import { text } from '@keystone-next/fields';
+import { config } from '@keystone-next/keystone/schema';
 
-const Talk = list({
-  fields: {
-    title: text({ isRequired: true }),
-    slug: text(),
-    description: text(),
-  },
-});
+import * as lists from './schema';
 
 export default config({
   db: { adapter: 'prisma_sqlite', url: 'file:./app.db' },
@@ -15,5 +8,5 @@ export default config({
     generateNextGraphqlAPI: true,
     generateNodeAPI: true,
   },
-  lists: { Talk },
+  lists,
 });
