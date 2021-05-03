@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import { DocumentRenderer } from '@keystone-next/document-renderer';
 
 import { lists } from '.keystone/api';
+import { renderers } from '../../content/renderers';
 
 export default function Home({ talk }) {
   return (
@@ -11,7 +13,13 @@ export default function Home({ talk }) {
         </Link>
       </div>
       <h1 className="text-3xl mt-4 mb-4">{talk.title}</h1>
-      <p>{talk.description}</p>
+      {talk.speaker && <p>by {talk.speaker.name}</p>}
+      <div>
+        <DocumentRenderer
+          renderers={renderers}
+          document={talk.description.document}
+        />
+      </div>
     </div>
   );
 }
@@ -35,7 +43,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }) {
   const [talk] = await lists.Talk.findMany({
     where: { slug },
-    query: 'id title description',
+    query: 'id title description { document } speaker { name }',
   });
   return { props: { talk } };
 }
