@@ -29,7 +29,7 @@ In the talk I went through a step-by-step live demo of how to put a simple websi
 
 ## Follow Along
 
-If you want to reproduce the steps in my live demo, see the `steps` folder for (light) instructions; or you can see the original steps in the [commit histor](https://github.com/JedWatson/react-sydney-2021-stack/commits/main)
+If you want to reproduce the steps in my live demo, see the `steps` folder for (light) instructions; or you can see the original steps in the [commit history](https://github.com/JedWatson/react-sydney-2021-stack/commits/main)
 
 > Note that I rolled back the solution just before the talk, followed by a bunch of WIP commits, so I could push it live from the git repo at the end. You can ignore those 🙂
 
