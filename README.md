@@ -25,7 +25,7 @@ In the talk I went through a step-by-step live demo of how to put a simple websi
 - Using the new KeystoneJS Document field
 - Adding a GraphQL API to the Next.js app for front-end queries in production
 
-... then I wrapped up by deploying to Vercel: [react-sydney-2021-stack.vercel.app](react-sydney-2021-stack.vercel.app)
+... then I wrapped up by deploying to Vercel: [react-sydney-2021-stack.vercel.app](https://react-sydney-2021-stack.vercel.app)
 
 ## Follow Along
 
