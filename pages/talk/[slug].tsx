@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { DocumentRenderer } from '@keystone-next/document-renderer';
 
 import { lists } from '.keystone/api';
+import { renderers } from '../../content/renderers';
 
 export default function Home({ talk }) {
   return (
@@ -13,7 +14,10 @@ export default function Home({ talk }) {
       </div>
       <h1 className="text-3xl mt-4 mb-4">{talk.title}</h1>
       <p>
-        <DocumentRenderer document={talk.description.document} />
+        <DocumentRenderer
+          renderers={renderers}
+          document={talk.description.document}
+        />
       </p>
     </div>
   );
