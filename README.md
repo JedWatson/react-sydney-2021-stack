@@ -2,6 +2,10 @@
 
 Demo content for my talk at React Sydney, May 2021.
 
+## Try it out on GitPod
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/JedWatson/react-sydney-2021-stack)
+
 ## Running the app
 
 Clone the repo, run `yarn` to install dependencies, then `yarn dev` to start the dev server.
