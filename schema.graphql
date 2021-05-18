@@ -58,8 +58,6 @@ enum SortTalksBy {
   title_DESC
   slug_ASC
   slug_DESC
-  speaker_ASC
-  speaker_DESC
 }
 
 input TalkUpdateInput {
@@ -168,8 +166,6 @@ enum SortSpeakersBy {
   name_DESC
   slug_ASC
   slug_DESC
-  talks_ASC
-  talks_DESC
 }
 
 input SpeakerUpdateInput {
